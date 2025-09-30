@@ -79,5 +79,8 @@ npm run lint
 
 ## 🔐 Licencia
 
-Este proyecto es de uso **privado y exclusivo** de la empresa propietaria.
-Queda prohibida su copia, modificación o distribución sin autorización expresa.
+Copyright (c) 2025 CODEOPTIKAL SAS
+
+Todos los derechos reservados.
+
+Este código es propiedad privada y no puede ser utilizado, copiado, modificado ni distribuido sin autorización expresa por escrito del titular.
