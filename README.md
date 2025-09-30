@@ -25,8 +25,8 @@ Toda la información se almacena en **Supabase** (PostgreSQL administrado en la 
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/usuario/repositorio-partes.git
-cd repositorio-partes
+git clone https://github.com/sabogal-dev/partesCode2025
+cd partesCode2025
 ```
 
 Instala las dependencias:
