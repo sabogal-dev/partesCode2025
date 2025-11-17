@@ -9,6 +9,7 @@ export const Cantidad = ({ tipo, montura, refrescarLista }) => {
 
     const [valor, setValor] = useState(0);
     const [cargando, setcargando] = useState(false)
+    const [open, setOpen] = useState(false);
 
     const guardarCambioSupabase = async (valor, montura) => {
         setcargando(true)
@@ -29,6 +30,7 @@ export const Cantidad = ({ tipo, montura, refrescarLista }) => {
             })
             setcargando(false)
             refrescarLista()
+            setOpen(false)
         } catch (error) {
             toaster.create({
                 description: `error : ${error}`,
@@ -36,19 +38,20 @@ export const Cantidad = ({ tipo, montura, refrescarLista }) => {
             })
             setcargando(false)
             refrescarLista()
+            setOpen(false)
         }
         setcargando(false)
     }
     return (
-        <Dialog.Root size="xs">
+        <Dialog.Root size="xs" open={open} onOpenChange={setOpen}>
             <Toaster />
             <Dialog.Trigger asChild>
                 {tipo == "suma" ?
-                    <Button mx={3} size="xs" variant="surface" colorPalette="green" >
+                    <Button mx={3} size="xs" variant="surface" colorPalette="green" onClick={() => setOpen(true)}>
                         <FaPlus></FaPlus>
                     </Button>
                     :
-                    <Button mx={3} size="xs" variant="surface" colorPalette="red" >
+                    <Button mx={3} size="xs" variant="surface" colorPalette="red" onClick={() => setOpen(true)}>
                         <FaMinus></FaMinus>
                     </Button>
                 }
@@ -78,7 +81,7 @@ export const Cantidad = ({ tipo, montura, refrescarLista }) => {
                             {cargando ?
                                 <Button loading disabled>Guardando</Button>
                                 :
-                                <Button onClick={() => { guardarCambioSupabase(valor, montura) }}>Guardar</Button>
+                                <Button onClick={() => guardarCambioSupabase(valor, montura)}>Guardar</Button>
                             }
                         </Dialog.Footer>
                         <Dialog.CloseTrigger asChild>

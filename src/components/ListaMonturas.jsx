@@ -3,6 +3,7 @@ import { Table, Heading, Separator, Button } from '@chakra-ui/react'
 
 import { Editar } from './dialog/Editar';
 import { Cantidad } from './dialog/Cantidad';
+import { Eliminar } from './dialog/Eliminar';
 export const ListaMonturas = ({ monturas, refrescarLista }) => {
 
     return (
@@ -31,7 +32,8 @@ export const ListaMonturas = ({ monturas, refrescarLista }) => {
                             <Table.Cell textAlign="center">
                                 <Cantidad tipo={"suma"} montura={montura} refrescarLista={refrescarLista}></Cantidad>
                                 <Cantidad tipo={"resta"} montura={montura} refrescarLista={refrescarLista}></Cantidad>
-                                <Editar montura={montura}></Editar>
+                                <Editar montura={montura} refrescarLista={refrescarLista}></Editar>
+                                <Eliminar montura={montura} refrescarLista={refrescarLista}></Eliminar>
                             </Table.Cell>
                         </Table.Row>
                     ))}
